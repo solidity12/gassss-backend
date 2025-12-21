@@ -1,0 +1,24 @@
+{
+  "name": "stable-dex-data-collector",
+  "version": "1.0.0",
+  "description": "STABLE chain Uniswap V2 compatible DEX data collector",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "keywords": [
+    "uniswap",
+    "dex",
+    "blockchain",
+    "data-collector"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ethers": "^6.9.0",
+    "mysql2": "^3.6.5",
+    "dotenv": "^16.3.1"
+  }
+}
+
