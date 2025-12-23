@@ -13,12 +13,12 @@ function loadConfig(network = 'testnet') {
   return {
     factory: config.UniswapV2Factory,
     factoryDeployBlock: config.FactoryDeployBlock || 0,
-    weth9: config.WETH9,
+    weth9: config.gUSDT,
     usdt0: config.USDT0,
     stable: config.STABLE,
     gassssView: config.GASSSSView,
     allowedTokens: [
-      config.WETH9,
+      config.gUSDT,
       config.USDT0,
       config.STABLE
     ].filter(Boolean) // null/undefined 제거
