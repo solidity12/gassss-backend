@@ -7,13 +7,26 @@ const { FactoryCollector } = require('./services/factoryCollector.js');
 const { Queue } = require('./services/queue.js');
 const { PairWorker } = require('./services/pairWorker.js');
 const { loadConfig } = require('./config/config.js');
+const path = require("path");
 
-dotenv.config();
+const env = process.env.NODE_ENV || "dev";
+
+dotenv.config({
+  path: env === "prod"
+    ? path.resolve(process.cwd(), ".env.prod")
+    : path.resolve(process.cwd(), ".env")
+});
+
+console.log("NODE_ENV =", env);
 
 const RPC_URL = process.env.RPC_URL;
 const BLOCK_RANGE = parseInt(process.env.BLOCK_RANGE || '10000');
 const START_BLOCK = process.env.START_BLOCK ? parseInt(process.env.START_BLOCK) : null;
 const NETWORK = process.env.NETWORK || 'testnet';
+console.log("RPC_URL", RPC_URL)
+console.log("BLOCK_RANGE", BLOCK_RANGE)
+console.log("START_BLOCK", START_BLOCK)
+console.log("NETWORK", NETWORK)
 
 class DEXDataCollector {
   constructor() {
